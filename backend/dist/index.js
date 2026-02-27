@@ -12,9 +12,8 @@ const errorHandler_1 = require("./middleware/errorHandler");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT ? Number(process.env.PORT) : 4000;
-const ORIGIN = process.env.ORIGIN || 'http://localhost:5173';
 app.use((0, cors_1.default)({
-    origin: ORIGIN,
+    origin: true, // allow all origins (sufficient for this assessment)
 }));
 app.use(express_1.default.json());
 app.get('/api/health', (_req, res) => {
